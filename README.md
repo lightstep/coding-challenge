@@ -66,12 +66,14 @@ files will be a json list containing individual log entries which are dictionari
 
 ## Data Dictionary
 
-| service | A unique name for the service that created this log line. |
-| level   | Either DEBUG, INFO, WARNING, or ERROR.                     |
-| timestamp | A string representation of the time this log line was printed. |
-| operation | A unique name for the piece of work being completed by the service. You can think of this like a method name. |
-| message | The operations write a log line at the beginning of their work and also at the end of their work. All messages will begin with either START or END to indicate which they are. |
-| transaction_id | A unique id for what transaction that caused this log line to be written. Call chains will share the same transaction_id. So for example if a request to the account_service requires a call to the db_service to complete its work, both of those operations will share the same transaction_id. |
+Term | Definition
+---- | ----------
+service | A unique name for the service that created this log line.
+level | Either DEBUG, INFO, WARNING, or ERROR.
+timestamp | A string representation of the time this log line was printed.
+operation | A unique name for the piece of work being completed by the service. You can think of this like a method name.
+message | The operations write a log line at the beginning of their work and also at the end of their work. All messages will begin with either START or END to indicate which they are.
+transaction_id | A unique id for what transaction that caused this log line to be written. Call chains will share the same transaction_id. So for example if a request to the account_service requires a call to the db_service to complete its work, both of those operations will share the same transaction_id.
 
 Together, all of the log entries from a single transaction will look like this:
 
